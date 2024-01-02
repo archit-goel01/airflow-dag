@@ -1,13 +1,13 @@
 from datetime import datetime
 import json
 from airflow import DAG
-from airflow.providers.http.operators.http import HttpOperator
+from airflow.providers.http.operators.http import SimpleHttpOperator
 
 default_args = {
     'start_date': datetime(2024, 1, 1),
 }
 
-with DAG(dag_id='http_springboot-rest',
+with DAG(dag_id='http_springboot_rest',
          schedule_interval='@daily',
          default_args=default_args,
          tags=['http-rest'],
