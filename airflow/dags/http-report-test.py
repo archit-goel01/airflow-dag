@@ -16,7 +16,7 @@ with DAG(dag_id='http_springboot_rest',
 
     report_service = DockerOperator(
         task_id='rs-report-service',
-        image='eundev025sstvsnfcontainerregistry.azurecr.io/tesco/rs_reports_generator:latest',
+        image='tesco/rs_reports_generator:latest',
         auto_remove=True,
         force_pull=True,
         dag=dag,
